@@ -70,7 +70,7 @@ void readUserInputs(std::string& startWord, std::string& finishWord, dictionary_
  * @param[in,out] Dictionary - Словарь слов по которым мы можем преобразовывать.
  * @param[in] targetLenght - Все слова не равные данной длине будут удалены.
  */
-void deleteWordsWithImposibleTransform(dictionary_t& Dictionary, size_t targetLenght)
+void deleteWordsWithImposibleTransform(dictionary_t& Dictionary, const size_t targetLenght)
 {
   for (size_t i = 0; i < Dictionary.size();)
   {
@@ -141,7 +141,7 @@ bool isStartAndFinishWordContained(const std::string& startWord, const std::stri
  * @param[in,out] Dictionary - Словарь слов по которым мы можем преобразовывать.
  * @return Введенные пользователем данные валидны или нет.
  */
-bool validUserInputs(std::string& startWord, std::string& finishWord, dictionary_t& Dictionary)
+bool validUserInputs(const std::string& startWord, const std::string& finishWord, dictionary_t& Dictionary)
 {
   if (startWord.length() != finishWord.length())
   {
@@ -243,13 +243,13 @@ void calculateLengthTransformPath(const std::string& startWord, dictionary_t& Di
  * @param[in] finishWord - Слово, к которому нужно преобразовать.
  * @return Строка с ответом на вопрос.
  */
-std::string getShortedLengthTransformPath(dictionary_t& Dictionary, const std::string& startWord,
+std::string getShortedLengthTransformPath(const dictionary_t& Dictionary, const std::string& startWord,
                                           const std::string& finishWord)
 {
   std::string answer{};
 
-  dictionary_t::iterator answerIterator = std::find_if(
-      Dictionary.begin(), Dictionary.end(), [&finishWord](const treeNode& a) { return a.word == finishWord; });
+  auto answerIterator = std::find_if(Dictionary.begin(), Dictionary.end(),
+                                     [&finishWord](const treeNode& a) { return a.word == finishWord; });
 
   if (!answerIterator->isUsed)
   {
@@ -269,7 +269,7 @@ std::string getShortedLengthTransformPath(dictionary_t& Dictionary, const std::s
  *
  * @param[in] Dictionary - Словарь слов по которым мы можем преобразовывать.
  */
-void printDictionaryToConsole(dictionary_t& Dictionary)
+void printDictionaryToConsole(const dictionary_t& Dictionary)
 {
   std::cout << "\nYour dictionary:\n\tD: ";
 
