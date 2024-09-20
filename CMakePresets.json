@@ -9,7 +9,7 @@
             }
         },
         {
-            "name": "Relese_Preset",
+            "name": "Release_Preset",
             "binaryDir": "${sourceDir}/build",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release"
@@ -24,7 +24,7 @@
         },
         {
             "name": "Release_Build",
-            "configurePreset": "Relese_Preset",
+            "configurePreset": "Release_Preset",
             "configuration": "Release"
         }
     ]
