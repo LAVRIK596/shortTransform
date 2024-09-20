@@ -115,21 +115,21 @@ void deleteRepeatableWords(dictionary_t& Dictionary)
 bool isStartAndFinishWordContained(const std::string& startWord, const std::string& finishWord,
                                    const dictionary_t& Dictionary)
 {
-  bool startWord_contained = false, finishWord_contained = false;
+  bool isStartWordContained = false, isFinishWordContained = false;
 
   for (const treeNode& curNode : Dictionary)
   {
     if (curNode.word == startWord)
-      startWord_contained = true;
+      isStartWordContained = true;
 
     if (curNode.word == finishWord)
-      finishWord_contained = true;
+      isFinishWordContained = true;
 
-    if (startWord_contained && finishWord_contained)
+    if (isStartWordContained && isFinishWordContained)
       break;
   }
 
-  return startWord_contained && finishWord_contained;
+  return isStartWordContained && isFinishWordContained;
 }
 
 /**
