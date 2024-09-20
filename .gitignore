@@ -1,3 +1,4 @@
 # Ignore auto generated folders with entire contents
 documentation/
-build
+build/
+.vscode/
