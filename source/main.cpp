@@ -2,7 +2,7 @@
  * @file main.cpp
  * @author LAVRIK596 (Lavrik596@mail.ru)
  * @brief Основной файл для решения данной задачи.
- * @date 2024-09-11
+ * @date 11-09-2024
  *
  */
 
